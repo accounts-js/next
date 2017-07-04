@@ -1,0 +1,19 @@
+{
+  "name": "@accounts/mongo",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "compile": "tsc",
+    "testonly": "jest",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.29"
+  },
+  "peerDependencies": {
+    "@accounts/server": "^0.1.0"
+  }
+}

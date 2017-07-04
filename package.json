@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "lerna exec -- yarn start",
+    "link": "lerna exec -- yarn link",
+    "compile": "lerna run compile",
+    "test": "lerna run test",
+    "testonly": "lerna run testonly",
+    "coverage": "lerna exec -- yarn coverage",
+    "lint": "tslint -c tslint.json 'packages/*/src/**/*.ts' 'packages/*/__tests__/**/*.ts'",
+    "format": "prettier --single-quote --trailing-comma es5 --parser typescript --write \"packages/*/{src,__tests__}/**/*.ts\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^20.0.2",
+    "@types/node": "^8.0.7",
+    "jest": "^20.0.4",
+    "lerna": "^2.0.0-rc.5",
+    "prettier": "^1.5.2",
+    "ts-jest": "^20.0.6",
+    "tslint": "^5.4.3",
+    "tslint-config-prettier": "^1.1.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.4.1"
+  }
+}

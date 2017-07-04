@@ -1,0 +1,30 @@
+{
+  "name": "@accounts/server",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "compile": "tsc",
+    "testonly": "jest",
+    "coverage": "jest --coverage"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "./__tests__/.*.(ts|tsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "mapCoverage": true
+  },
+  "dependencies": {
+    "jsonwebtoken": "^7.4.1"
+  },
+  "peerDependencies": {
+    "@accounts/common": "^0.1.0"
+  }
+}

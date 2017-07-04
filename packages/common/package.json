@@ -1,0 +1,12 @@
+{
+  "name": "@accounts/common",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "compile": "tsc",
+    "testonly": "jest",
+    "coverage": "jest --coverage"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "declaration": true,
+    "pretty": true,
+    "removeComments": true,
+    "lib": ["es6"],
+    "types": [
+      "@types/node"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@accounts/password",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "compile": "tsc",
+    "testonly": "jest",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.0",
+    "@types/lodash": "^4.14.66"
+  },
+  "peerDependencies": {
+    "@accounts/common": "^0.1.0"
+  }
+}
