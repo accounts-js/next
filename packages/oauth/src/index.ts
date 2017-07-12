@@ -10,14 +10,13 @@ export class AccountsOauth {
   }
 
   public async authenticate(params: any): Promise<any> {
-    if (
-      !params.provider ||
-      !this.options[params.provider] ||
-      !this[params.provider]
-    ) {
+    const { userProvider = this[params.provider] } = this.options[params.provider];
+    
+    if (!params.provider || !userProvider) {
       throw new Error('Invalid provider');
     }
-    const oauthUser = await this[params.provider](params);
+    
+    const oauthUser = await userProvider(params);
     let user = await this.db.findUserByServiceId(params.provider, oauthUser.id);
     if (!user) {
       // TODO check email doesn't exist in db
