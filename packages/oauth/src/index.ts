@@ -20,7 +20,10 @@ export class AccountsOauth {
     let user = await this.db.findUserByServiceId(params.provider, oauthUser.id);
     if (!user) {
       // TODO check email doesn't exist in db
-      const userId = await this.db.createUser({});
+      const userId = await this.db.createUser({
+        profile: oauthUser.profile,
+      });
+
       user = await this.db.findUserById(userId);
     }
     await this.db.setService(user.id, params.provider, oauthUser);
