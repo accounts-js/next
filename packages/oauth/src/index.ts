@@ -30,6 +30,9 @@ export class AccountsOauth {
       });
 
       user = await this.db.findUserById(userId);
+    } else {
+      // If user exist, attmpt to update profile
+      this.db.setProfile(user._id, oauthUser.profile);
     }
     await this.db.setService(user.id, params.provider, oauthUser);
     return user;
