@@ -11,6 +11,13 @@ const getUserAgent = req => {
   return userAgent;
 };
 
+const getAccessToken = req => 
+  req && 
+  req.session && 
+  req.session.grant && 
+  req.session.grant.response &&
+  req.session.grant.response.access_token;
+
 export interface AccountsExpressOptions {
   path: string;
 }
@@ -67,15 +74,17 @@ export default function accountsExpress(
   }
 
   if (accountsServer.services.oauth) {
-    router.get(`${path}/oauth/:provider/callback`, async (req, res) => {
+    router.get(`${path}/oauth/:provider/callback`, async (req: any, res) => {
       try {
         const userAgent = getUserAgent(req);
         const ip = requestIp.getClientIp(req);
+        const accessToken = getAccessToken(req);
         const loggedInUser = await accountsServer.loginWithService(
           'oauth',
           {
             ...req.params,
             ...req.query,
+            access_token: accessToken,
           },
           { ip, userAgent }
         );
